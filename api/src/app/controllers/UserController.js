@@ -34,7 +34,7 @@ class UserController {
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validations fails.' });
     }
-    const { email, oldPassword } = req.body;
+    const { email, password, oldPassword } = req.body;
     const user = await User.findByPk(req.userId);
     if (email !== user.email) {
       const userExists = await User.findOne({ where: { email } });
@@ -44,6 +44,9 @@ class UserController {
     }
     if (oldPassword && !(await user.checkPassword(oldPassword))) {
       return res.status(401).json({ error: 'Password does not match.' });
+    }
+    if (password && !oldPassword) {
+      return res.status(401).json({ error: 'Old password not provided.' });
     }
     const { id, name, provider } = await User.update(req.body);
     return res.json({ id, name, email, provider });
