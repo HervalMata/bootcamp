@@ -10,8 +10,10 @@
   "author": "Herval Mata",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "mysql2": "^1.5.2",
+    "save": "^2.4.0",
     "sequelize": "^5.8.7"
   },
   "devDependencies": {
