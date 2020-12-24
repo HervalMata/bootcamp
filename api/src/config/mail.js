@@ -1,9 +1,9 @@
 export default {
-  host: 'smtp.gmail.com',
-  port: 567,
+  host: process.env.MAIL_HOST,
+  port: process.env.MAIL_PORT,
   auth: {
-    user: process.env.USER_GMAIL,
-    pass: process.env.USER_PASS,
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
   },
   default: {
     from: 'Equipe GoBarber <noreplay@gobarber.com>',
