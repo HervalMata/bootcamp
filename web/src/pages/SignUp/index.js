@@ -25,8 +25,8 @@ export default function SignUp() {
         <Input name="name" placeholder="Nome Completo" />
         <Input name="email" type="email" placeholder="Seu email" />
         <Input name="password" type="password" placeholder="Sua senha" />
-        <button type="submit">Acessar</button>
-        <Link to="/register">JCriar conta gratuita</Link>
+        <button type="submit">Criar conta</button>
+        <Link to="/register">Já tenho login</Link>
       </Form>
     </>
   );
