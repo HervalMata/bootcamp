@@ -1,19 +1,19 @@
-export function signInRequest(email, password) {
+export function updateProfileRequest(data) {
   return {
-    type: '@auth/SIGN_IN_REQUEST',
-    payload: { email, password },
+    type: '@user/UPDATE_PROFILE_REQUEST',
+    payload: { data },
   };
 }
 
-export function signInSuccess(token, user) {
+export function updateProfileSuccess(profile) {
   return {
-    type: '@auth/SIGN_IN_SUCCESS',
-    payload: { token, user },
+    type: '@user/UPDATE_PROFILE_SUCCESS',
+    payload: { profile },
   };
 }
 
-export function signFailure() {
+export function updateProfileFailure() {
   return {
-    type: '@auth/SIGN_IN_FAILURE',
+    type: '@user/UPDATE_PROFILE_FAILURE',
   };
 }
