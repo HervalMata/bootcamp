@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import api from '~/services/api';
 import { updateProfileSuccess, updateProfileFailure } from './actions';
 
-export function* updateProfile({ profile }) {
+export function* updateProfile({ payload }) {
   try {
     const { name, email, avatar_id, ...rest } = payload.data;
     const profile = Object.assign(
